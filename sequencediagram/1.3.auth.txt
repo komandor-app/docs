@@ -1,0 +1,14 @@
+participant App
+participant API
+participant Services
+
+App->API:/confirmAuth
+activate App
+activate API
+API->API:Проверка nonce
+
+API<->Services:Проверка подтверждения профиля
+API-#redxApp:Error
+App<--API:Ответ: needRegistryPhone(true/false)
+deactivate App
+deactivate API

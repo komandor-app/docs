@@ -1,0 +1,26 @@
+# Командор API 2.0 Draft
+
+1. [Аутентификация и регистрация профиля](1.auth.md)
+2. [Получение профиля и сертификатов](2.profile.md)
+3. [Обновление фото профиля](3.photo.md)
+4. [Регистрация сертификата и синхронизация чатов](4.certificate.md)
+5. [Регистрация Push нотификации](5.push.md)
+6. [Получение чатов и создание ключей чата](6.chats.md)
+7. [Создание, получение и отправка сообщений в чат](7.messages.md)
+8. [Обновление статуса сообщений](8.status.md)
+9. [Создание и получение папок, добавление и удаление сообщения](9.folders.md)
+10. [Покупка Premium доступа](10.premium.md)
+11. [Коды ошибок](11.errors.md)
+
+### Полный список API
+- /api/auth/
+- /api/confirmAuth/
+- /api/registryPhone/
+- /api/confirmPhone/
+- /api/profile/
+- /api/photo/
+- /api/chats/
+- /api/chatsKeys/
+- /api/messages/
+- /api/sendMessage/
+- /api/

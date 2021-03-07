@@ -1,0 +1,26 @@
+participant Client
+participant Gateway
+participant Centrifugo
+participant Bank services
+participant Komandor CSP
+participant Bank backend
+
+Client<<-->>Gateway:Auth
+Bank services->>Gateway:Auth
+activate Bank services
+Bank services<<-->>Komandor CSP:Auth
+Gateway->>Bank services:
+deactivate Bank services
+Gateway<<-->>Bank services:Get chats (contacts)
+Bank services<<-->>Centrifugo:Subscription
+Client->>Gateway:Send message
+Gateway->>Centrifugo:Event
+Centrifugo<<-->>Bank services:Get message
+Bank services<<-->>Komandor CSP:Decrypt/Veryfication sign
+Bank services->>Bank backend:Send Data
+Bank backend<<->>Bank backend:Processing
+Bank backend->>Bank services:Result processing
+Bank services<<-->>Komandor CSP:Sign/Encrypt
+Bank services->>Gateway:Send message
+Gateway->>Centrifugo:Event
+Centrifugo<<-->>Client:Message delivery

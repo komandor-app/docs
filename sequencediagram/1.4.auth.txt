@@ -1,0 +1,18 @@
+participant App
+participant API
+participant Services
+
+App->API:/api/registryPhone/
+activate App
+activate API
+API<->Services:Генерация кода и отправка SMS
+API-#redxApp:Error
+App<--API:Ответ: ID кода
+deactivate API
+App->API:/api/confirmPhone/
+activate API
+API<->Services:Проверка номер и кода
+API-#redxApp:Error
+App<--API:Результат подтверждения
+deactivate App
+deactivate API

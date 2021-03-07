@@ -1,0 +1,18 @@
+participant App
+participant CSP
+participant API
+participant DB
+
+App<->CSP:Получение списка сертификатов
+activate App
+App<->App:Выбор просроченного сертификата
+App->API:/auth
+activate API
+API->API:Проверка сертификата
+
+API<->DB:Проверка активного профиля
+API-#redxApp:Error
+App<--API:Ответ: token, nonce, key
+App<->CSP:Шифрование nonce ключом key
+deactivate App
+deactivate API

@@ -1,0 +1,12 @@
+participant "User 1\nprofile.sync = 1" as User 1
+participant API
+participant "User 2\nprofile.sync = 0" as User 2
+
+User 1<-->User 2:/getChats
+User 1<->User 1:Экспорт ключа на сертификат\nсо статусом sync = 0
+User 1->API:/syncChats
+API->User 2:Уведомление о создании ключа
+API-->User 1:Ответ
+User 2->API:/getChats
+API-->User 2:Ответ
+User 2<->User 2:Обновелние\nлокального хранилища
