@@ -1,4 +1,4 @@
-# Командор API 2.0 Draft
+# Командор API 2.0
 
 1. [Аутентификация и регистрация профиля](1.auth.md)
 2. [Получение профиля и сертификатов](2.profile.md)
@@ -12,15 +12,3 @@
 10. [Покупка Premium доступа](10.premium.md)
 11. [Коды ошибок](11.errors.md)
 
-### Полный список API
-- /api/auth/
-- /api/confirmAuth/
-- /api/registryPhone/
-- /api/confirmPhone/
-- /api/profile/
-- /api/photo/
-- /api/chats/
-- /api/chatsKeys/
-- /api/messages/
-- /api/sendMessage/
-- /api/
