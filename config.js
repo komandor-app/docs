@@ -4,5 +4,5 @@ module.exports = {
     margin: "15mm",
     printBackground: false
   },
-  stylesheet_encoding: "utf-8",
+  stylesheet_encoding: "utf-8"
 }
